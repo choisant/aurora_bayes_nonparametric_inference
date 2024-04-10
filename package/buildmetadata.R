@@ -162,7 +162,7 @@ buildmetadata <- function(data, file=NULL, diagnosticvalues=FALSE){
         if(is.character(file)){
             file <- paste0(sub('.csv$', '', file), '.csv')
         }else{
-            file <- paste0('metadata_', datafile)
+            file <- paste0('../output_files', datafile, '/metadata_', datafile)
             file <- paste0(sub('.csv$', '', file), '.csv')
         }
         if(file.exists(file)){

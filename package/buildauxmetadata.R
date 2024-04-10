@@ -194,7 +194,7 @@ buildauxmetadata <- function(data, metadata, file=TRUE){
         if(is.character(file)){
             file <- paste0(sub('.rds$', '', file), '.rds')
         }else{
-            file <- paste0('auxmetadata_', datafile)
+            file <- paste0('../output_files', datafile, '/auxmetadata_', datafile)
             file <- paste0(sub('.csv$', '', file), '.rds')
         }
         if(file.exists(file)){
