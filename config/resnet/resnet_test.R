@@ -48,7 +48,7 @@ buildmetadata(data=alldata, file='../data/meta-resnet')
 
 
 ## Select a subset of data for training
-ntrain <- 500
+ntrain <- 1000
 set.seed(18) # random seed
 trainpoints <- sort(sample(1:nrow(alldata), ntrain))
 
@@ -74,6 +74,7 @@ inferpopulation(data=alldata[trainpoints], metadata='../data/meta-resnet-modifie
 ## [outputdir]/plotsamples_Fdistribution.pdf
 ## [outputdir]/plotquantiles_Fdistribution.pdf
 
+#---------------------------------------------------------------------------------------------------------
 #### Example analysis using the updated probability distribution
 
 ## Let's say we want the posterior probability
