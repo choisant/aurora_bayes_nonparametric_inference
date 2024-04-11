@@ -351,6 +351,7 @@ inferpopulation <- function(data, metadata, outputdir, nsamples=1200, nchains=12
     )
 
 #### Output info
+    cat(format(Sys.time(), "%a %b %d %X %Y"), '\n')
     cat('Starting Monte Carlo sampling of',nsamples,'samples by',nchains,'chains across', ncores, 'cores.\n')
     cat(nsamplesperchain,'samples per chain,',nchainspercore,'chains per core.\n')
     cat('Core logs are being saved in individual files.\n')
@@ -763,6 +764,7 @@ inferpopulation <- function(data, metadata, outputdir, nsamples=1200, nchains=12
             gc()
             chainnumber <- (acore-1L)*nchainspercore + achain
             padchainnumber <- sprintf(paste0('%0',nchar(nchains),'i'), chainnumber)
+            cat(format(Sys.time(), "%a %b %d %X %Y"), '\n')
             cat('\nChain #', chainnumber,
                 '(chain', achain,'of',nchainspercore,'for this core)\n')
             cat('Seed:', chainnumber+seed, '\n')
@@ -933,6 +935,7 @@ inferpopulation <- function(data, metadata, outputdir, nsamples=1200, nchains=12
                     ## limit number of iterations per loop, to save memory
                     niter <- min(lengthmeasure - nitertot + 1L, niterini)
                     subiter <- subiter + 1L
+                    cat(format(Sys.time(), "%a %b %d %X %Y"), '\n')
                     cat('\nChain #', chainnumber,'.',subiter,
                         '(chain', achain,'of',nchainspercore,
                         'for this core): increasing by', niter, '\n')
