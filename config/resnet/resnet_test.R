@@ -48,7 +48,7 @@ buildmetadata(data=alldata, file='../data/meta-resnet')
 
 
 ## Select a subset of data for training
-ntrain <- 2000
+ntrain <- 500
 set.seed(18) # random seed
 trainpoints <- sort(sample(1:nrow(alldata), ntrain))
 
@@ -57,9 +57,9 @@ trainpoints <- sort(sample(1:nrow(alldata), ntrain))
 ## Let's ask for 256 Monte Carlo samples
 ## from two Monte Carlo chains
 ## We must also specify an output directory
-mcsamples <- 900
+mcsamples <- 3600
 
-inferpopulation(data=alldata[trainpoints], metadata='../data/meta-resnet-modified.csv', outputdir='../output_files/testresnet', nsamples=mcsamples, nchains=30)
+inferpopulation(data=alldata[trainpoints], metadata='../data/meta-resnet-modified.csv', outputdir='../output_files/testresnet', nsamples=mcsamples, nchains=60)
 
 ## The detailed Monte Carlo sampling can be monitored, for each core,
 ## by reading the files '_log-1.log', '_log-2.log', etc in the output dir
